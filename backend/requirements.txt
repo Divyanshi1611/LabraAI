@@ -1,0 +1,7 @@
+langchain
+chromadb
+transformers
+torch
+sentence-transformers
+huggingface-hub
+PyPDF2
