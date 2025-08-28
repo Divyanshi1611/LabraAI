@@ -1,29 +1,32 @@
-# 🧪 LabraAI – Autonomous Research Assistant for Scientific Hypothesis Generation  
+# LabraAI: Autonomous Research Assistant for Scientific Hypothesis Generation
 
-LabraAI is an AI-powered research assistant that mimics a scientist’s creative process.  
-It retrieves cutting-edge research papers, processes scientific knowledge, and generates **novel hypotheses** or **experiment suggestions** by combining retrieved insights.  
-
-This project is designed to assist researchers, students, and professionals in accelerating scientific discovery by leveraging advanced **RAG (Retrieval-Augmented Generation)** pipelines, embeddings, and LLM reasoning.  
+LabraAI is an **AI-powered autonomous research assistant** designed to help researchers generate **novel scientific hypotheses** by retrieving, analyzing, and synthesizing cutting-edge research papers and datasets. It mimics a scientist’s creative process by combining retrieval, reasoning, and hypothesis generation.
 
 ---
 
-## 🚀 Features  
-
-- 📄 **Scientific Document Ingestion**: Process and embed PDFs, datasets, and papers.  
-- 🔍 **Intelligent Retrieval**: Retrieve the most relevant research context from a vector store (SciBERT + ChromaDB).  
-- 🧠 **Hypothesis Generation**: Generate grounded hypotheses using Claude/Gemini.  
-- 🕸️ **Knowledge Graph Integration** *(Future Phase)*: Connect retrieved ideas with citation networks.  
-- 🔄 **Interactive Refinement**: User feedback loop for improving hypotheses.  
-- 🌐 **Web Interface**: Clean React.js frontend for easy interaction.  
+## 🚀 Features
+- **Research Domain Input**: Enter a scientific domain or question (e.g., "Quantum materials" or "Cancer immunotherapy").
+- **Document Retrieval**: Fetches relevant papers from arXiv, PubMed, and other sources using advanced retrieval techniques.
+- **Embedding + Vector Store**: Uses **SciBERT embeddings** stored in **ChromaDB** for semantic search.
+- **Grounded Hypothesis Generation**: Uses **Claude 3 (Haiku)** as the reasoning LLM to generate new hypotheses grounded in retrieved knowledge.
+- **Knowledge Graphs & Citations**: (Planned) Builds citation networks and knowledge graphs for structured insights.
+- **Interactive Refinement**: Users can refine hypotheses with feedback loops.
+- **Web Interface**: Clean React.js frontend for interactive Q&A and exploration.
 
 ---
 
-## 🏗️ Architecture  
+## 🛠️ Tech Stack
+- **Backend**: [FastAPI](https://fastapi.tiangolo.com/)  
+- **Frontend**: [React.js](https://reactjs.org/) + [TailwindCSS](https://tailwindcss.com/)  
+- **LLM**: [Claude 3 Haiku](https://www.anthropic.com/) (via `anthropic` API)  
+- **Embeddings**: [SciBERT](https://huggingface.co/allenai/scibert_scivocab_uncased)  
+- **Vector Database**: [ChromaDB](https://www.trychroma.com/)  
+- **Retriever**: [LangChain](https://www.langchain.com/) + arXiv API integration  
+- **Other Tools**:  
+  - Sentence Transformers (`sentence-transformers`)  
+  - PyPDF for PDF parsing  
+  - Docker for deployment  
 
-```mermaid
-flowchart TD
-    A[User Query] --> B[Retriever - ChromaDB + SciBERT]
-    B --> C[Relevant Papers/Datasets]
-    C --> D[LLM (Claude/Gemini)]
-    D --> E[Hypothesis Generation]
-    E --> F[User Feedback & Refinement]
+---
+
+## 📂 Project Structure
